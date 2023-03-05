@@ -1,7 +1,7 @@
 from datetime import datetime
-from typing import Optional
 
 from pydantic import BaseModel, Extra, Field, validator, PositiveInt
+from typing import Optional
 
 
 class CharityProjectUpdate(BaseModel):
@@ -15,7 +15,6 @@ class CharityProjectUpdate(BaseModel):
         if value is not None and value <= 0:
             raise ValueError('Поле full_amount должно быть больше 0.')
         return value
-
 
     class Config:
         extra = Extra.forbid
